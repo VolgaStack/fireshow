@@ -1,0 +1,17 @@
+﻿{% extends "fireshow/base.html" %}
+
+{% block title %}{{ video.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        
+    </div>
+    
+    <div class="container">
+        {% block disqus %}
+            {% include "fireshow/disqus.html" %}
+        {% endblock %}
+    </div>
+
+{% endblock %}

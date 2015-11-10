@@ -1,0 +1,44 @@
+﻿{% extends "fireshow/base.html" %}
+
+{% block title %}{{ "Фото галерея" }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+            <h1>Фотогалерея</h1>
+    </div>
+    
+    {% for p in object_list %}
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="{% url 'photo:photo_detail' p.id %}" class="thumbnail">
+                    <img class="thumbnail" src="{{ p.filepath }}" alt="{{ p.title }}">
+                </a>
+            </div>
+        </div>
+
+    {% empty %}
+        <div class="alert alert-info">
+            <strong>Ой!</strong> Пока никто не добавил фотографий в галерею.
+        </div>
+    {% endfor %}
+
+    {% if paginator.num_pages > 1 %}
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+                <li class="active"><a href="?page={{ paginator.number }}">{{ paginator.number }}<span class="sr-only"></span></a></li>
+            {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}

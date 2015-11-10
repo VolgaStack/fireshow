@@ -1,0 +1,32 @@
+#bot-nav { 
+    background-color: black;
+}
+
+.img-stretched {
+	height:10%;
+}
+
+#img-left-side {
+	float:left;
+}
+
+#img-right-side {
+	float:right;
+}
+
+#top-image {
+	background-image:url("../img/background-black-1px.png");
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+#top-navbar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: orange;
+}
+
+.thumbnail {
+    width:150px;
+    height:150px
+}

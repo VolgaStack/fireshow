@@ -1,0 +1,17 @@
+﻿{% load static from staticfiles %}
+{% load sitetree %}
+
+    <div id="top-image" class="container-fluid">
+        <img id="img-left-side" class="img-stretched" src="{% static "img/stretched-left.png" %}" />
+        <img id="img-right-side" class="img-stretched" src="{% static "img/stretched-right.png" %}" />
+    </div> 
+
+    <div id="top-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>

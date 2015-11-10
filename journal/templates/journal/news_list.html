@@ -1,0 +1,42 @@
+﻿{% extends "fireshow/base.html" %}
+
+{% block title %}{{ "Наш журнал" }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+    <div class="page-header">
+            <h1>Наш журнал</h1>
+    </div>
+    
+    {% for news in object_list %}
+        <div class="blog-post">
+            <h2 class="blog-post-title">{{ news.title }}</h2>
+            <p class="blog-post-meta">{{ news.published }}</p>
+            <p>{{ news.preview }}</p>
+            <a href="{% url 'journal:news_detail' news.id %}" class="btn btn-default" role="button">Узнать больше...</a>
+        </div><!-- /.blog-post -->  
+    {% empty %}
+        <div class="alert alert-info">
+            <strong>Ой!</strong> Пока никто не добавил записей в журнал.
+        </div>
+    {% endfor %}
+
+    {% if paginator.num_pages > 1 %}
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+                <li class="active"><a href="?page={{ paginator.number }}">{{ paginator.number }}<span class="sr-only"></span></a></li>
+            {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}
