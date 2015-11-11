@@ -1,6 +1,6 @@
 ﻿{% extends "fireshow/base.html" %}
 
-{% block title %}{{ "Фото галерея" }} | {{ block.super }}{% endblock %}
+{% block title %}{{ "Фотогалерея" }} | {{ block.super }}{% endblock %}
 
 {% block content %}
     <div class="page-header">
@@ -9,7 +9,7 @@
     
     {% for p in object_list %}
         <div class="row">
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-12 col-md-8">
                 <a href="{% url 'photo:photo_detail' p.id %}" class="thumbnail">
                     <img class="thumbnail" src="{{ p.filepath }}" alt="{{ p.title }}">
                 </a>

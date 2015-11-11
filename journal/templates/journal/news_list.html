@@ -11,7 +11,7 @@
         <div class="blog-post">
             <h2 class="blog-post-title">{{ news.title }}</h2>
             <p class="blog-post-meta">{{ news.published }}</p>
-            <p>{{ news.preview }}</p>
+            <p>{{ news.preview|safe }}</p>
             <a href="{% url 'journal:news_detail' news.id %}" class="btn btn-default" role="button">Узнать больше...</a>
         </div><!-- /.blog-post -->  
     {% empty %}

@@ -1,5 +1,9 @@
 ﻿{% load sitetree %}
 
-<ul class="nav navbar-nav">
-    {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
-</ul>
+<div id="bot-navbar" class="container-fluid">
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
+        </ul>
+    </div>
+</div>

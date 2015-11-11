@@ -1,17 +1,24 @@
 ﻿{% load static from staticfiles %}
 {% load sitetree %}
 
-    <div id="top-image" class="container-fluid">
-        <img id="img-left-side" class="img-stretched" src="{% static "img/stretched-left.png" %}" />
-        <img id="img-right-side" class="img-stretched" src="{% static "img/stretched-right.png" %}" />
-    </div> 
+<div id="top-image" class="container-fluid">
+    <img id="img-left-side" class="img-stretched" src="{% static "img/stretched-left.png" %}" />
+    <img id="img-right-side" class="img-stretched" src="{% static "img/stretched-right.png" %}" />
+</div> 
 
-    <div id="top-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
+<nav class="navbar navbar-default">
+  <div id="top-navbar" class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
     </div>
+    <div class="collapse navbar-collapse" id="top">
+      <ul class="nav navbar-nav">
+        {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,7 +1,3 @@
-#bot-nav { 
-    background-color: black;
-}
-
 .img-stretched {
 	height:10%;
 }
@@ -26,7 +22,20 @@
     background-color: orange;
 }
 
+#bot-navbar { 
+    background-color: black;
+}
+
 .thumbnail {
     width:150px;
     height:150px
+}
+
+@media (min-width: 768px){
+    .navbar-nav{
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+        float:none;
+    }
 }
