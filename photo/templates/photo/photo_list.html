@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-8">
                 <a href="{% url 'photo:photo_detail' p.id %}" class="thumbnail">
-                    <img class="thumbnail" src="{{ p.filepath }}" alt="{{ p.title }}">
+                    <img class="thumbnail" src="{{ p.filepath.url }}" alt="{{ p.desc }}">
                 </a>
             </div>
         </div>
