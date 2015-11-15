@@ -3,18 +3,10 @@
 {% block title %}{{ photo.title }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-
     <div class="container">
         <div class="page-header">
             <h1>{{ photo.title }}</h1>
         </div>
             <img src="{{ photo.filepath.url }}" alt="{{ photo.desc }}">
     </div>
-    
-    <div class="container">
-        {% block disqus %}
-            {% include "fireshow/disqus.html" %}
-        {% endblock %}
-    </div>
-
 {% endblock %}

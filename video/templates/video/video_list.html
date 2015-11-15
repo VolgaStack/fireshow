@@ -3,5 +3,37 @@
 {% block title %}{{ "Видео галерея" }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-    
+
+    <div class="row">
+        {% for p in object_list %}
+            <div class="col-md-4">
+                <a href="{% url 'video:video_detail' p.id %}">
+                    <img class="thumbnail video-t" src="{{ p.thumbnail.url }}">
+                </a>
+            </div>
+        {% empty %}
+            <div class="alert alert-info">
+                <strong>Ой!</strong> Пока никто не добавил видеозаписей в галерею.
+            </div>
+        {% endfor %}
+    </div>
+    {% if paginator.num_pages > 1 %}
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+                <li class="active"><a href="?page={{ paginator.number }}">{{ paginator.number }}<span class="sr-only"></span></a></li>
+            {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %} 
 {% endblock %}

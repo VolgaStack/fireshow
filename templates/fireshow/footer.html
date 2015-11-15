@@ -1,9 +1,10 @@
+{% load static from staticfiles %}
 {% load sitetree %}
 
-<div id="bot-navbar" class="container-fluid">
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
-        </ul>
-    </div>
-</div>
+<nav id="bot-navbar" class="navbar navbar-inverse">
+    <ul class="nav navbar-nav">
+        {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
+    </ul>
+</nav>
+
+<div id="bot-image" class="container-fluid"></div> 
