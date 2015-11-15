@@ -8,7 +8,7 @@ class HomePage(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
-        small = Photo.objects.all().order_by('-published')[:10]
+        small = Photo.objects.all().order_by('-published')[:6]
         context['small_carousel'] = small
         return context
 

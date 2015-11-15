@@ -8,10 +8,4 @@
         <p class="blog-post-meta">{{ news.published }}</p>
         <p>{{ news.content|safe }}</p>
     </div>
-   
-    <div class="container">
-        {% block disqus %}
-            {% include "fireshow/disqus.html" %}
-        {% endblock %}
-    </div>
 {% endblock %}
