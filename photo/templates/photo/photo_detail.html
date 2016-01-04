@@ -3,10 +3,15 @@
 {% block title %}{{ photo.title }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="page-header">
-            <h1>{{ photo.title }}</h1>
+    <div class="row">
+        <div class="col=xs=12">
+            <div class="page-header">
+                <h1>{{ photo.title }}</h1>
+            </div>
         </div>
-            <img src="{{ photo.filepath.url }}" alt="{{ photo.desc }}">
+
+        <div class="col=xs=12">
+            <img class="img-responsive img-detail" src="{{ photo.filepath.url }}" alt="{{ photo.desc }}">
+        </div>
     </div>
 {% endblock %}

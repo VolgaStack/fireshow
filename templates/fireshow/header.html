@@ -1,23 +1,34 @@
 {% load static from staticfiles %}
 {% load sitetree %}
 
-<div id="top-image" class="container">
-    <img src="{% static "img/stretched-right.png" %}" />   
-    <img src="{% static "img/logo.png" %}" />
-    <img src="{% static "img/stretched-left.png" %}" />
-</div> 
-
-<nav id="top-navbar" class="navbar navbar-inverse">
-    <div class="container navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="top-image">
+                    <img src="{% static "img/stretched-right.png" %}" />   
+                    <a href="/"><img src="{% static "img/logo.png" %}" /></a>
+                    <img src="{% static "img/stretched-left.png" %}" />
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="top">
-      <ul class="nav navbar-nav">
-        {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
-      </ul>
+</header>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="top">
+            <ul class="nav navbar-nav">
+            {% sitetree_tree from "menu" template "sitetree/navbar.html" %}
+            </ul>
+        </div>
     </div>
 </nav>

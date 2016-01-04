@@ -3,47 +3,61 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #FFF;
 }
+.row-content {
+    min-height:200px;
+}
 .carousel {
-    height: 400px;
-    margin-bottom: 60px;
-}
-.carousel-small {
-    height: 100px;
-}
-.carousel-caption {
-    z-index: 10;
+    height: 300px;
+    margin-bottom: 40px;
 }
 .carousel .item {
-    height: 400px;
-    background-color: #000;
+    height: 300px;   
 }
-.carousel-inner > .item > img {
-    height: 400px;
+.carousel .item > img {
+    min-height: 300px;
     margin: auto;
-}
-.thumbnail {
-    width: 100%;
-    background-color: #000;
-    border:none;
-}
-.image-t {
-    min-height:130px;
-}
-.video-t {
-    min-height:200px;
 }
 .navbar { 
     background-color: #000;
+    margin:5px 0px 5px 0px;
 }
 .page-header {
     text-align:center;
 }
-iframe {
+.img-gallery {
+    border:none;
+    background-color: #000;
+}
+.img-detail {
     display:block;
-    width: 560px;
-    height: 315px;
     margin: 0 auto;
-    background-color: #777;
+    padding: 10px 0px 10px 0px;
+}
+.vid-detail-lg {
+    width: 550px;
+    height:300px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
+}
+.vid-detail-sm {
+    width: 220px;
+    height:100px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px;
+}
+@media (min-width: 992px){
+    .vid-detail-lg {
+        width: 650px;
+        height:400px;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
+    .vid-detail-sm {
+        width: 300px;
+        height:150px;
+        margin: 0 auto;
+        padding: 10px 0px 10px 0px;
+    }
 }
 #top-image {
     vertical-align:bottom;
@@ -54,17 +68,22 @@ iframe {
     background-repeat:repeat-x;
     min-height:100px;
 }
-#top-navbar {
-    margin:10px 0px 10px 0px;
+/* Выключаем стили у ссылки */
+.link-unstyled {
+  color: inherit;
+  text-decoration: inherit;
 }
-@media (min-width: 768px){
-    .navbar-nav{
-        margin: 0 auto;
-        display: table;
-        table-layout: fixed;
-        float:none;
-    }
+
+.link-unstyled:link {
+  color: inherit;
+  text-decoration: inherit;
 }
+
+.link-unstyled:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* Горизонтальная линия "зачеркивающая" текст  */
 h2 {
     position: relative;
     overflow: hidden;
@@ -81,7 +100,7 @@ h2 > span:after {
     content: '';
     position: absolute;
     width: 100%;
-    border-top: 2px solid #4e4e4e;
+    border-top: 2px solid red;
     margin-top: .6em;
 }
 h2 > span:before {

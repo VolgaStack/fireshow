@@ -3,12 +3,15 @@
 {% block title %}{{ video.title }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="page-header">
-            <h1>{{ video.title }}</h1>
+    <div class="row">
+        <div class="col=xs=12">
+            <div class="page-header">
+                <h1>{{ video.title }}</h1>
+            </div>
         </div>
 
-            <iframe src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
-
+        <div class="col=xs=12">
+            <iframe class="vid-detail-lg" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 {% endblock %}

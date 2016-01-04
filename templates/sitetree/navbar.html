@@ -4,7 +4,7 @@
     <li class="{% if item.is_current or item.in_current_branch %}active{% endif %}{% if item.has_children %}dropdown{% endif %}">
         <a href="
             {% if item.has_children %}
-                #" data-toggle="dropdown" class="dropdown-toggle"><b class="caret"></b>
+                #" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><b class="caret"></b>
             {% else %}
                 {% sitetree_url for item %}">
             {% endif %}

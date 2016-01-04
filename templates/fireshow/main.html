@@ -3,44 +3,72 @@
 {% load sitetree %}
 
 {% block content %}
-    <div class="container"><!-- /.carousel -->
-        <div id="large_carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="{% static "img/slide1.png" %}">
+    <div class="row row-content">
+        <div class="col-xs-12">
+            <div id="large_carousel" class="carousel slide" data-ride="carousel"><!-- /.carousel -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{% static "img/slide1.png" %}">
+                    </div>
+                    <div class="item">
+                        <img src="{% static "img/slide1.png" %}">
+                    </div>
+                    <div class="item">
+                        <img src="{% static "img/slide1.png" %}">
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="{% static "img/slide1.png" %}">
+                <a class="left carousel-control" href="#large_carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#large_carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div><!-- /.carousel -->
+        </div>
+    </div>
+
+    <div class="row row-content">
+        <div class="col-xs-12">
+            <p>
+                <i>
+                    Огненное шоу — разновидность уличного перформанса (выступления оригинального жанра), 
+                    значительная часть которого заключается в исполнении трюков с огнем, а также использовании огня для реализации творческой идеи. 
+                    Огненное шоу, как правило, исполняется группой из нескольких артистов, традиционно называемой театр огня. 
+                    Артистов театра огня обычно называют фаерщиками, спиннерами или просто артистами оригинального жанра. 
+                    В современном мире фаерщики представляют собой отдельную субкультуру со своими обычаями, традициями и языком.
+                </i>
+            </p>
+        </div>
+    </div>
+
+    <div class="row row-content">
+        {% for v in videos %}
+            {% if forloop.first %}
+                <div class="col-xs-12 col-sm-9">
+                    <iframe class="vid-detail-lg" src="{{ v.url }}" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="item">
-                    <img src="{% static "img/slide1.png" %}">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="row">
+            {% else %}
+                        <div class="col-xs-4 col-sm-12">
+                            <iframe class="vid-detail-sm" src="{{ v.url }}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+            {% endif %}                       
+        {% endfor %}
+                    </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#large_carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#large_carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div><!-- /.carousel -->
-    </div>
 
-    <div class="container">
-        <p>
-            <i>
-                Огненное шоу — разновидность уличного перформанса (выступления оригинального жанра), 
-                значительная часть которого заключается в исполнении трюков с огнем, а также использовании огня для реализации творческой идеи. 
-                Огненное шоу, как правило, исполняется группой из нескольких артистов, традиционно называемой театр огня. 
-                Артистов театра огня обычно называют фаерщиками, спиннерами или просто артистами оригинального жанра. 
-                В современном мире фаерщики представляют собой отдельную субкультуру со своими обычаями, традициями и языком.
-            </i>
-        </p>
-    </div>
-
-    <div class="container">
-        <h2><span>Фотогаллерея</span></h2>
-        <div class="row">
-            {% for p in small_carousel %}
-                <div class="col-md-2">
-                    <img class="thumbnail image-t" src="{{ p.filepath.url }}">
-                 </div>
-            {% endfor %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h2><span>Фотогаллерея</span></h2>
         </div>
-    </div>      
+    </div>
+
+    <div class="row row-content">
+        {% for p in images %}
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <img class="thumbnail img-responsive img-gallery" src="{{ p.filepath.url }}">
+            </div>
+        {% endfor %}
+        <div class="col-xs-12 text-right">
+            <a class="link-unstyled" href="{% url 'photo:photo_list' %}">Полистать >></a>
+        </div>
+    </div>     
 {% endblock %}

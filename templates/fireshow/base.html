@@ -3,7 +3,11 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        {% block meta_tags %}{% endblock %}
+        {% block meta_tags %}
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+        {% endblock %}
         <title>
             {% block title %} "Anima Fire" {% endblock %}
         </title>
@@ -17,18 +21,14 @@
 
     </head>
     <body>
-        <div class="container">
-            {% include "fireshow/header.html" %}
-        </div> 
+        {% include "fireshow/header.html" %} 
        
         <div class="container">
             {% block content %}
             {% endblock %}
         </div>
         
-        <div class="container">
-            {% include "fireshow/footer.html" %}
-        </div>
+        {% include "fireshow/footer.html" %}
 
          {% block javascript %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
