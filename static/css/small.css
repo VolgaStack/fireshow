@@ -21,6 +21,12 @@ body {
     background-color: #000;
     margin:5px 0px 5px 0px;
 }
+.navbar-nav {
+        margin: 0 auto;
+        display: table;
+        table-layout: fixed;
+        float:none;
+}
 .page-header {
     text-align:center;
 }
